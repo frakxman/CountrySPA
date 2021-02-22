@@ -35,4 +35,8 @@ export class ByCountyComponent implements OnInit {
       );
   }
 
+  suggestions( term: string ): void {
+    this.hasError = false;
+  }
+
 }

@@ -16,4 +16,9 @@ export class CountyService {
     const url = `${ this.apiUrl}/name/${ term }`;
     return this.http.get<Country[]>( url );
   }
+
+  searchCity( term: string ): Observable<Country[]> {
+    const url = `${ this.apiUrl}/capital/${ term }`;
+    return this.http.get<Country[]>( url );
+  }
 }

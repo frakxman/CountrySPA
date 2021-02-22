@@ -1,1 +1,25 @@
-<p>by-city works!</p>
+<h2>By Capital</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-input (enter)="search( $event )" placeholder="Search Capital...">
+        </app-input>
+    </div>
+</div>
+
+<hr>
+
+<div 
+    *ngIf="hasError"
+    class="alert alert-danger">
+    Nothing was found with the term "<i>{{ term }}</i>"
+</div>
+
+<div 
+    *ngIf="countries.length > 0" 
+    class="row">
+    <div class="col">
+        <app-table [countries]="countries"></app-table>
+    </div>
+</div>
