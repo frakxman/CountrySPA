@@ -1,1 +1,28 @@
-<p>see-country works!</p>
+<div 
+    *ngIf="!country; else divCountry"
+    class="alert alert-info">
+    Wait please...
+</div>
+
+<ng-template #divCountry>
+    <div class="box">
+        <div class="box-small">
+            <div class="row">
+                <h1><i>{{ country.name }}</i></h1>
+            </div>            
+            <div class="row mt-4">
+                <img
+                    class="img-thumbnail"
+                    [src]="country.flag"
+                    alt="country.flag"
+                >
+            </div>
+            <div class="row mt-4">
+                <h3>Information:</h3>
+                <pre>
+                    <i> {{ country | json }}</i>
+                </pre>
+            </div>
+        </div>
+    </div>
+</ng-template>
