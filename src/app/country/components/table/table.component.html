@@ -9,7 +9,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let country of countries; index as i">
+        <tr 
+            class="animate__animated animate__fadeInRight"
+            *ngFor="let country of countries; index as i">
             <td>{{ i +  1 }}</td>
             <td>
                 <img [src]="country.flag" [alt]="country.name">
