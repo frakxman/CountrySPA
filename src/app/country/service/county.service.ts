@@ -26,4 +26,9 @@ export class CountyService {
     const url = `${ this.apiUrl}/alpha/${ id }`;
     return this.http.get<Country>( url );
   }
+
+  getRegion(region: string ): Observable<Country[]> {
+    const url = `${ this.apiUrl}/region/${ region }`;
+    return this.http.get<Country[]>( url );
+  }
 }
